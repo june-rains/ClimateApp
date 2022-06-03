@@ -11,7 +11,7 @@ import SwiftUI
 struct testuiApp: App {
     var body: some Scene {
         WindowGroup {
-            PersonUIView()
+            ContentView()
         }
     }
 }
