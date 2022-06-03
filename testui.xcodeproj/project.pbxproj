@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B6A2AC7284A8662009435F1 /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6A2AC6284A8662009435F1 /* ActivityDetail.swift */; };
 		9B3B7680284A527F00A682E3 /* testuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B767F284A527F00A682E3 /* testuiApp.swift */; };
 		9B3B7682284A527F00A682E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B7681284A527F00A682E3 /* ContentView.swift */; };
 		9B3B7684284A528100A682E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3B7683284A528100A682E3 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B6A2AC6284A8662009435F1 /* ActivityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
 		9B3B767C284A527F00A682E3 /* testui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B3B767F284A527F00A682E3 /* testuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testuiApp.swift; sourceTree = "<group>"; };
 		9B3B7681284A527F00A682E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				9B3B7683284A528100A682E3 /* Assets.xcassets */,
 				9B3B7685284A528100A682E3 /* Preview Content */,
 				9B3B76AD284A5D5900A682E3 /* PersonUIView.swift */,
+				6B6A2AC6284A8662009435F1 /* ActivityDetail.swift */,
 				9B3B76AF284A67B700A682E3 /* PersonSecondUIView.swift */,
 			);
 			path = testui;
@@ -265,6 +268,7 @@
 			files = (
 				9B3B7682284A527F00A682E3 /* ContentView.swift in Sources */,
 				9B3B76AE284A5D5900A682E3 /* PersonUIView.swift in Sources */,
+				6B6A2AC7284A8662009435F1 /* ActivityDetail.swift in Sources */,
 				9B3B7680284A527F00A682E3 /* testuiApp.swift in Sources */,
 				9B3B76B0284A67B700A682E3 /* PersonSecondUIView.swift in Sources */,
 			);
