@@ -15,7 +15,6 @@
 		9B3B7691284A528200A682E3 /* testuiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B7690284A528200A682E3 /* testuiTests.swift */; };
 		9B3B769B284A528200A682E3 /* testuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B769A284A528200A682E3 /* testuiUITests.swift */; };
 		9B3B769D284A528200A682E3 /* testuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B769C284A528200A682E3 /* testuiUITestsLaunchTests.swift */; };
-		9B3B76AE284A5D5900A682E3 /* PersonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B76AD284A5D5900A682E3 /* PersonUIView.swift */; };
 		9B3B76B0284A67B700A682E3 /* PersonSecondUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B76AF284A67B700A682E3 /* PersonSecondUIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		9B3B7696284A528200A682E3 /* testuiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testuiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B3B769A284A528200A682E3 /* testuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testuiUITests.swift; sourceTree = "<group>"; };
 		9B3B769C284A528200A682E3 /* testuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9B3B76AD284A5D5900A682E3 /* PersonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonUIView.swift; sourceTree = "<group>"; };
 		9B3B76AF284A67B700A682E3 /* PersonSecondUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSecondUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +102,6 @@
 				9B3B7681284A527F00A682E3 /* ContentView.swift */,
 				9B3B7683284A528100A682E3 /* Assets.xcassets */,
 				9B3B7685284A528100A682E3 /* Preview Content */,
-				9B3B76AD284A5D5900A682E3 /* PersonUIView.swift */,
 				6B6A2AC6284A8662009435F1 /* ActivityDetail.swift */,
 				9B3B76AF284A67B700A682E3 /* PersonSecondUIView.swift */,
 			);
@@ -267,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B3B7682284A527F00A682E3 /* ContentView.swift in Sources */,
-				9B3B76AE284A5D5900A682E3 /* PersonUIView.swift in Sources */,
 				6B6A2AC7284A8662009435F1 /* ActivityDetail.swift in Sources */,
 				9B3B7680284A527F00A682E3 /* testuiApp.swift in Sources */,
 				9B3B76B0284A67B700A682E3 /* PersonSecondUIView.swift in Sources */,
