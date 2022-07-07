@@ -26,6 +26,10 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/WebappApplication.java" />
         </OpenedFileInfo>
         <OpenedFileInfo>
+          <option name="caretOffset" value="334" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/controller/RestDemoController.java" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
           <option name="caretOffset" value="715" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/service/FirebaseInitialize.java" />
         </OpenedFileInfo>
@@ -48,10 +52,6 @@
         <OpenedFileInfo>
           <option name="caretOffset" value="228" />
           <option name="fileUrl" value="jrt:///usr/lib/jvm/java-1.16.0-openjdk-amd64!/java.base/java/util/concurrent/Future.class" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="334" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/controller/RestDemoController.java" />
         </OpenedFileInfo>
       </list>
     </option>
