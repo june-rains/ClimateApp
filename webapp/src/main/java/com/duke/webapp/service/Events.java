@@ -7,6 +7,7 @@ import com.duke.webapp.service.FirebaseService;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONPropertyIgnore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,7 @@ public class Events {
         parseJson();
     }
 
+    @JSONPropertyIgnore()
     public void parseJson() throws Exception {
         this.events = new ArrayList<Event>();
 
