@@ -1,8 +1,10 @@
 package com.duke.webapp.Dao;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 import java.util.Map;
-
+@JsonIgnoreProperties
 public class Event {
     String id;
     String start_timestamp;
