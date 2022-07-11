@@ -1,5 +1,6 @@
 package com.duke.webapp.service;
 
+import com.duke.webapp.Dao.Event;
 import com.duke.webapp.Dao.Person;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
@@ -17,39 +18,38 @@ import java.util.concurrent.ExecutionException;
 public class FirebaseService {
     @Autowired
     FirebaseInitialize fireb;
-
-    public String saveUserDetails(Person person) throws ExecutionException, InterruptedException {
+    public String saveEventDetails(Event event) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users").document(person.getName()).set(person);
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("events").document(event.getId()).set(event);
                 return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
-    public Person getUserDetails(String name) throws ExecutionException, InterruptedException {
+    public Event getEventDetails(String id) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        DocumentReference documentReference = dbFirestore.collection("users").document(name);
+        DocumentReference documentReference = dbFirestore.collection("events").document(id);
         ApiFuture<DocumentSnapshot> future = documentReference.get();
 
         DocumentSnapshot document = future.get();
 
-        Person person = null;
+        Event event = null;
 
         if(document.exists()) {
-            person = document.toObject(Person.class);
-            return person;
+            event = document.toObject(Event.class);
+            return event;
         } else {
             return null;
         }
     }
 
-    public String updateUser(Person person) throws ExecutionException, InterruptedException {
+    public String updateEvent(Event event) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users").document(person.getName()).set(person);
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("events").document(event.getId()).set(event);
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
-    public String deleteUser(String name) throws ExecutionException, InterruptedException {
+    public String deleteEvent(String id) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("users").document(name).delete();
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("events").document(id).delete();
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
