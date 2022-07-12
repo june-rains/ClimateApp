@@ -50,8 +50,8 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/Dao/NetworkDAO.java" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="353" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/service/FirebaseService.java" />
+          <option name="caretOffset" value="0" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/pom.xml" />
         </OpenedFileInfo>
       </list>
     </option>
