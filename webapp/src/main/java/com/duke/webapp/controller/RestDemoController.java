@@ -6,13 +6,22 @@ import com.duke.webapp.service.FirebaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-//@RequestMapping("/tests")
+@CrossOrigin(origins = "http://localhost:3000")
 public class RestDemoController {
     @Autowired
     FirebaseService fireBaseService;
+
+
+    @GetMapping("/getAllEvents")
+    public List<Event> getAll() throws ExecutionException, InterruptedException {
+        return fireBaseService.getAllEvents();
+    }
+
 
     @GetMapping("/getEventDetails")
     public Event getExample(@RequestHeader() String id) throws ExecutionException, InterruptedException {

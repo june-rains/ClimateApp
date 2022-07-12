@@ -3,15 +3,14 @@ package com.duke.webapp.service;
 import com.duke.webapp.Dao.Event;
 import com.duke.webapp.Dao.Person;
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.WriteResult;
+import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @Service
@@ -51,6 +50,20 @@ public class FirebaseService {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("events").document(id).delete();
         return collectionsApiFuture.get().getUpdateTime().toString();
+    }
+
+    public List<Event> getAllEvents() throws ExecutionException, InterruptedException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        // asynchronously retrieve all documents
+        ApiFuture<QuerySnapshot> future = dbFirestore.collection("events").get();
+        // future.get() blocks on response
+        List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+        List<Event> events = new ArrayList<>();
+        for (QueryDocumentSnapshot document : documents) {
+            System.out.println(document.getId() + " => " + document.toObject(Event.class));
+            events.add(document.toObject(Event.class));
+        }
+        return events;
     }
 
 }
