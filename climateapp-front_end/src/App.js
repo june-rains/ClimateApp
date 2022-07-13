@@ -1,19 +1,18 @@
-import './App.css';
-import ListEventComponent from './components/ListEventComponent';
 import React from 'react';
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import Page1 from './components/Page1'
+import Home from './components/Home'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 function App() {
   return (
-    <Router>
-      <Link to="/first">page1</Link>
-      <div className="container">
-      <ListEventComponent />
-    </div>
-    <Routes>
-      <Route path="/first" component={App}></Route>
-    </Routes>
-    
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/page1' element={<Page1 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
