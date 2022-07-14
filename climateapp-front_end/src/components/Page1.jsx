@@ -7,7 +7,9 @@ export default class Page1 extends Component {
         return (
             <div>
                 <NavBar />
-                <ListEventComponent />
+                <div style={{ marginLeft: '50px', marginRight: '50px' }}>
+                    <ListEventComponent />
+                </div>
             </div>
         )
     }

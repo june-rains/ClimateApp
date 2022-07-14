@@ -22,11 +22,19 @@ class ListEventComponent extends Component {
 
     render() {
         let eventCards = this.state.events.map(event => {
-            return (
-                <Col>
-                    <EventCard eventSummary={event.summary} eventImage={event.image} />
-                </Col>
-            )
+            if (event.image) {
+                return (
+                    <Col style={{ marginTop: '20px' }}>
+                        <EventCard eventSummary={event.summary} eventImage={event.image} startTime={event.start_timestamp} endTime={event.end_timestamp} location={event.location.address} />
+                    </Col>
+                )
+            } else {
+                return (
+                    <Col style={{ marginTop: '20px' }}>
+                        <EventCard eventSummary={event.summary} eventImage={"https://1000logos.net/wp-content/uploads/2017/11/Duke-University-symbol.jpg"} startTime={event.start_timestamp} endTime={event.end_timestamp} location={event.location.address} />
+                    </Col>
+                )
+            }
         }
         )
         return (
