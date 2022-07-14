@@ -3,26 +3,40 @@ import { Link } from "react-router-dom";
 import NavBar from './NavBar';
 import './Home.css'
 import Button from 'react-bootstrap/Button';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+
 
 
 export default class Home extends Component {
     render() {
         return (
             <div>
+                <style type="text/css">
+                    {`    .btn-flat {
+      background-color: #33be71;
+      color: white;
+    }
+
+    .btn-xxl {
+      margin: 1rem;
+      padding: 10px 20px;;
+      font-size: 1.5rem;
+      width: 100%;
+    }
+    `}
+                </style>
+
+
                 <NavBar />
+
                 <Container>
-                    <Row className="justify-content-center">
-                        <Col xs lg="2">
-                            <Link to="/page1">
-                                <Button variant="primary" size="lg">
-                                    Go to Page 1
-                                </Button>
-                            </Link>
-                        </Col>
-                    </Row>
+                    <Link to="/eventsCatalog">
+                        <Button variant="flat" size="xxl">
+                            Events Catalog
+                        </Button>
+                    </Link>
                 </Container>
-            </div>
+            </div >
         )
     }
 }
