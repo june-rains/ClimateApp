@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import NavBar from './NavBar';
-import './Home.css'
 import Button from 'react-bootstrap/Button';
 import { Container } from 'react-bootstrap';
 

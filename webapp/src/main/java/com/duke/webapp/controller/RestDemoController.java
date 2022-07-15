@@ -25,7 +25,7 @@ public class RestDemoController {
 
     @GetMapping("/getEventDetails")
     public Event getExample(@RequestHeader() String id) throws ExecutionException, InterruptedException {
-        System.out.println("query user with id " + id);
+        System.out.println("query event with id " + id);
         return fireBaseService.getEventDetails(id);
     }
 
