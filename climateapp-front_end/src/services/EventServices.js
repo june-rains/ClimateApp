@@ -7,7 +7,12 @@ class EventServices {
     }
 
     getEventDetail(id) {
-        return axios.get(EVENT_API_DETAIL_URL, { params: { id: id } })
+        const config = {
+            headers:{
+                id: id
+            }
+        };
+        return axios.get(EVENT_API_DETAIL_URL, config);
     }
 }
 

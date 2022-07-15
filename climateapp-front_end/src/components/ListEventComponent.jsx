@@ -31,7 +31,7 @@ class ListEventComponent extends Component {
             } else {
                 return (
                     <Col style={{ marginTop: '20px' }}>
-                        <EventCard eventID={event.id} eventSummary={event.summary} eventImage={"https://1000logos.net/wp-content/uploads/2017/11/Duke-University-symbol.jpg"} startTime={event.start_timestamp} endTime={event.end_timestamp} location={event.location.address} />
+                        <EventCard eventID={event.id} eventSummary={event.summary} eventImage={"http://calendar.duke.edu/packs/media/images/v2016/featured-event-4-52d98822329df448240dfc0cddbe1ab1.png"} startTime={event.start_timestamp} endTime={event.end_timestamp} location={event.location.address} />
                     </Col>
                 )
             }

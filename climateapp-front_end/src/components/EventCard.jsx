@@ -28,8 +28,10 @@ class EventCard extends Component {
                         <br />
                         Location: {this.props.location}
                     </Card.Text>
-                    <Link to={"/eventsCatalog/" + this.props.eventID}><Button variant="primary">More Details</Button></Link>
                 </Card.Body>
+                    <div style={{textAlign:'center', marginBottom: '20px'}}>
+                    <Link to={`/eventsCatalog/${this.props.eventID}`}><Button variant="primary" >More Details</Button></Link>
+                    </div>
             </Card>
         );
     }
