@@ -30,10 +30,6 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/Dao/Person.java" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="317" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/WebappApplication.java" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
           <option name="caretOffset" value="254" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/Dao/NetworkDAO.java" />
         </OpenedFileInfo>
@@ -50,8 +46,12 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/service/FirebaseService.java" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="718" />
+          <option name="caretOffset" value="688" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/controller/RestDemoController.java" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="317" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/WebappApplication.java" />
         </OpenedFileInfo>
       </list>
     </option>
