@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ClampLines from 'react-clamp-lines';
 import TimeStamp from './TimeStamp';
+import { Link } from "react-router-dom";
+
+
 
 class EventCard extends Component {
     render() {
@@ -11,28 +13,22 @@ class EventCard extends Component {
             <Card style={{ width: '18rem', height: '30rem' }}>
                 <Card.Img variant="top" src={this.props.eventImage} />
                 <Card.Body>
-                    <Card.Title >
-                    <ClampLines
-                        text={this.props.eventSummary}
-                        //id="really-unique-id"
-                        lines={2}
-                        ellipsis="..."
-                        //moreText="Expand"
-                        //lessText="Collapse"
-                        //className="custom-class"
-                        //innerElement="p"
-                        buttons={false}
-                    />
-                        </Card.Title>
+                    <Card.Title>
+                        <ClampLines
+                            text={this.props.eventSummary}
+                            lines={2}
+                            ellipsis="..."
+                            buttons={false} />
+                    </Card.Title>
                     <Card.Text>
 
                         <TimeStamp time={this.props.startTime} def={"Start Time: "}></TimeStamp>
+                        <br />
                         <TimeStamp time={this.props.endTime} def={"End Time: "}></TimeStamp>
-                        <Row>
-                            Location: {this.props.location}
-                        </Row>
+                        <br />
+                        Location: {this.props.location}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Link to={"/eventsCatalog/" + this.props.eventID}><Button variant="primary">More Details</Button></Link>
                 </Card.Body>
             </Card>
         );

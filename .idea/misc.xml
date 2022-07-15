@@ -53,6 +53,10 @@
           <option name="caretOffset" value="0" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/climateapp-front_end/package.json" />
         </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="317" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/WebappApplication.java" />
+        </OpenedFileInfo>
       </list>
     </option>
   </component>
