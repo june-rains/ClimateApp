@@ -37,7 +37,7 @@ public class Events {
     public void parseJson() throws Exception {
         this.events = new ArrayList<Event>();
 
-        String rawJson = networkDAO.request("https://calendar.duke.edu/events/index.json?&future_days=5&feed_type=simple");
+        String rawJson = networkDAO.request("https://calendar.duke.edu/events/index.json?&future_days=20&feed_type=simple");
 
         JSONObject root = new JSONObject(rawJson);
 
@@ -154,13 +154,18 @@ public class Events {
 
             }
             List<String> categoriesList = new ArrayList<>();
-            try {
-                for(int x = 0; x < categories.length(); x++) {
-                    categoriesList.add(String.valueOf(categories.get(x)));
-                }
-            } catch (JSONException e) {
+            if(categories == null) {
+                categoriesList.add("");
+            } else {
+                try {
+                    for(int x = 0; x < categories.length(); x++) {
+                        categoriesList.add(String.valueOf(categories.get(x)));
+                    }
+                } catch (JSONException e) {
 
+                }
             }
+
 
 
             String link = null;
@@ -183,13 +188,18 @@ public class Events {
 
             }
             List<String> submitted_byList = new ArrayList<>();
-            try {
-                for(int y = 0; y < submitted_by.length(); y++) {
-                    submitted_byList.add(String.valueOf(categories.get(y)));
-                }
-            } catch (JSONException e) {
+            if(categories == null) {
+                submitted_byList.add("");
+            } else {
+                try {
+                    for(int y = 0; y < submitted_by.length(); y++) {
+                        submitted_byList.add(String.valueOf(categories.get(y)));
+                    }
+                } catch (JSONException e) {
 
+                }
             }
+
 
             String webcast_url = null;
             try {

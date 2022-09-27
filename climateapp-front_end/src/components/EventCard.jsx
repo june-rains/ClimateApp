@@ -26,7 +26,11 @@ class EventCard extends Component {
                         <br />
                         <TimeStamp time={this.props.endTime} def={"End Time: "}></TimeStamp>
                         <br />
-                        Location: {this.props.location}
+                        <ClampLines
+                            text={"Location: " + this.props.location}
+                            lines={1}
+                            ellipsis="..."
+                            buttons={false} />
                     </Card.Text>
                 </Card.Body>
                     <div style={{textAlign:'center', marginBottom: '20px'}}>
