@@ -8,7 +8,7 @@ class TimeStampWeekDay extends Component {
             day: 'numeric',
         };
         return (
-            <span className="font-link" style={{ fontWeight: 'bold', textDecorationLine: 'underline' }}>
+            <span className="font-link" style={{ fontWeight: 'bold'}}>
                 {new Date(this.props.time).toLocaleDateString('en-US', options)}
             </span>
 

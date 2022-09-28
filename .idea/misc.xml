@@ -14,36 +14,8 @@
     <option name="openedFilesInfos">
       <list>
         <OpenedFileInfo>
-          <option name="caretOffset" value="317" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/WebappApplication.java" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="150" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/Dao/Event.java" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="471" />
+          <option name="caretOffset" value="971" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/service/FirebaseInitialize.java" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="214" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/Dao/Person.java" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="11326" />
-          <option name="fileUrl" value="jar://$MAVEN_REPOSITORY$/org/json/json/20210307/json-20210307.jar!/org/json/JSONObject.class" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="227" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/service/FirebaseService.java" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="1059" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/service/Events.java" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="1164" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/Dao/NetworkDAO.java" />
         </OpenedFileInfo>
         <OpenedFileInfo>
           <option name="caretOffset" value="1723" />
@@ -54,8 +26,32 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/climateapp-front_end/package.json" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="317" />
+          <option name="caretOffset" value="175" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/Dao/Event.java" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="635" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/controller/RestDemoController.java" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="3218" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/service/FirebaseService.java" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="841" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/Dao/Person.java" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="183" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/WebappApplication.java" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="254" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/Dao/NetworkDAO.java" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="4919" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/webapp/src/main/java/com/duke/webapp/service/Events.java" />
         </OpenedFileInfo>
       </list>
     </option>

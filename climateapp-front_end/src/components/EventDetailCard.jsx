@@ -15,7 +15,7 @@ class EventDetailCard extends Component {
                             <Card.Img variant="top" src={this.props.eventImage} />
                             <Card.Body>
                                 <Card.Text>
-                                    <span className="font-link" style={{ fontWeight: 'bold', textDecorationLine: 'underline' }}>{this.props.title}</span>
+                                    <span className="font-link" style={{ fontWeight: 'bold'}}>{this.props.title}</span>
                                     <br />
                                     <TimeStampWeekDay time={this.props.starttime} />
                                 </Card.Text>

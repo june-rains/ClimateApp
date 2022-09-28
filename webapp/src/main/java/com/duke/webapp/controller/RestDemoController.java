@@ -18,7 +18,7 @@ public class RestDemoController {
 
 
     @GetMapping("/getAllEvents")
-    public List<Event> getAll() throws ExecutionException, InterruptedException {
+    public List<Event> getAll() throws Exception {
         return fireBaseService.getAllEvents();
     }
 

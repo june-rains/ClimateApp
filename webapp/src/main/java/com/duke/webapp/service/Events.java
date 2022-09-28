@@ -25,20 +25,31 @@ public class Events {
     FirebaseService fireBaseService;
     @Autowired
     NetworkDAO networkDAO;
+
     List<Event> events;
 
+    public Events () {
+        this.networkDAO = new NetworkDAO();
+        this.fireBaseService = new FirebaseService();
+    }
 
     @PostConstruct
     public void init() throws Exception {
         parseJson();
     }
 
+    @PostConstruct
+    public void updateEventsInDataBase() throws ExecutionException, InterruptedException {
+        for(Event e : events) {
+            fireBaseService.updateEvent(e);
+        }
+    }
+
     @JSONPropertyIgnore()
     public void parseJson() throws Exception {
         this.events = new ArrayList<Event>();
 
-        String rawJson = networkDAO.request("https://calendar.duke.edu/events/index.json?&future_days=20&feed_type=simple");
-
+        String rawJson = networkDAO.request("https://calendar.duke.edu/events/index.json?&future_days=5&feed_type=simple");
         JSONObject root = new JSONObject(rawJson);
 
         JSONArray events = root.getJSONArray("events");

@@ -45,7 +45,7 @@ public class FirebaseService {
 
     public String updateEvent(Event event) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("events").document(event.getId()).set(event);
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("events").document(event.getId()).set(event, SetOptions.merge());
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
@@ -55,7 +55,11 @@ public class FirebaseService {
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
-    public List<Event> getAllEvents() throws ExecutionException, InterruptedException {
+    public List<Event> getAllEvents() throws Exception {
+        Events es = new Events();
+        es.init();
+        es.updateEventsInDataBase();
+
         Firestore dbFirestore = FirestoreClient.getFirestore();
         // asynchronously retrieve all documents
         ApiFuture<QuerySnapshot> future = dbFirestore.collection("events").get();
@@ -68,5 +72,4 @@ public class FirebaseService {
         }
         return events;
     }
-
 }
