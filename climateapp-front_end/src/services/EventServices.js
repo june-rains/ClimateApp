@@ -7,9 +7,8 @@ class EventServices {
     }
 
     getEventDetail(id) {
-        console.log("in get event detail")
         const config = {
-            headers:{
+            headers: {
                 id: id
             }
         };

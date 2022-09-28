@@ -24,6 +24,7 @@ public class FirebaseService {
     }
 
     public Event getEventDetails(String id) throws ExecutionException, InterruptedException {
+        System.out.println("In Firebase getEventDetails service");
         Firestore dbFirestore = FirestoreClient.getFirestore();
         DocumentReference documentReference = dbFirestore.collection("events").document(id);
         ApiFuture<DocumentSnapshot> future = documentReference.get();
@@ -34,6 +35,8 @@ public class FirebaseService {
 
         if(document.exists()) {
             event = document.toObject(Event.class);
+            System.out.println("The description of the event is: " + event.getDescription());
+            System.out.println("The location of the event is: " + event.getLocation());
             return event;
         } else {
             return null;

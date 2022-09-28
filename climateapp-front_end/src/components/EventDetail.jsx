@@ -2,8 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Component } from "react";
 import EventServices from '../services/EventServices';
-import { Col, Container, Row } from 'react-bootstrap';
-import EventCard from './EventCard';
+import { Container, Row } from 'react-bootstrap';
+import EventBreadcrumb from "./EventBreadCrumb";
+import EventDetailCard from "./EventDetailCard";
+import EventDescription from "./EventDescription";
+import NavBar from "./NavBar";
 
 export default function EventDetail() {
     let params = useParams();
@@ -29,34 +32,39 @@ class EventDetailShow extends Component {
         const id = this.props.id;
         EventServices.getEventDetail(id).then((res) => {
             this.setState({ events: res.data });
+        }).catch((error) => {
+            console.log(error);
         })
     }
 
     render() {
 
-        // let eventCards = this.state.events.map(event => {
-        //     if (event.image) {
-        //         return (
-        //             <Col style={{ marginTop: '20px' }}>
-        //                 <EventCard eventID={event.id} eventSummary={event.summary} eventImage={event.image} startTime={event.start_timestamp} endTime={event.end_timestamp} location={event.location.address} />
-        //             </Col>
-        //         )
-        //     } else {
-        //         return (
-        //             <Col style={{ marginTop: '20px' }}>
-        //                 <EventCard eventID={event.id} eventSummary={event.summary} eventImage={"http://calendar.duke.edu/packs/media/images/v2016/featured-event-4-52d98822329df448240dfc0cddbe1ab1.png"} startTime={event.start_timestamp} endTime={event.end_timestamp} location={event.location.address} />
-        //             </Col>
-        //         )
-        //     }
-        // }
-        // )
+        var image = this.state.events.image;
+        var eventDetailCard = null;
+        if (image) {
+            eventDetailCard = <EventDetailCard eventImage={this.state.events.image} title={this.state.events.summary} sponsor={this.state.events.sponsor} starttime={this.state.events.start_timestamp} />;
+        } else {
+            eventDetailCard = <EventDetailCard eventImage={"http://calendar.duke.edu/packs/media/images/v2016/featured-event-4-52d98822329df448240dfc0cddbe1ab1.png"} title={this.state.events.summary} sponsor={this.state.events.sponsor} starttime={this.state.events.start_timestamp} />;
+        }
         return (
-            <Container fluid>
-                <Row>
-                    {this.props.id}
-                    {/* {this.state.events} */}
-                </Row>
-            </Container>
+            <>
+                <NavBar />
+                <Container fluid>
+                    <EventBreadcrumb eventTitle={this.state.events.summary} />
+                    <Row>
+                        {eventDetailCard}
+                    </Row>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <EventDescription description={this.state.events.description} />
+                </Container>
+            </>
 
         );
     }
