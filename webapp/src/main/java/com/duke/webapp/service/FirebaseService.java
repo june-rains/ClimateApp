@@ -1,6 +1,7 @@
 package com.duke.webapp.service;
 
 import com.duke.webapp.Dao.Event;
+import com.duke.webapp.Dao.OverAllReport;
 import com.duke.webapp.Dao.Person;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
@@ -22,6 +23,31 @@ public class FirebaseService {
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("events").document(event.getId()).set(event);
                 return collectionsApiFuture.get().getUpdateTime().toString();
     }
+
+    public void saveOverAllReport(OverAllReport report) throws ExecutionException, InterruptedException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        // auto-generate id for overall report
+        ApiFuture<DocumentReference> addedDocRef = dbFirestore.collection("overAllReport").add(report);
+        System.out.println("Added document with ID: " + addedDocRef.get().getId());
+    }
+
+    public List<OverAllReport> getAllReports() throws ExecutionException, InterruptedException {
+        List<OverAllReport> overAllReports = new ArrayList<>();
+
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        // asynchronously retrieve all documents
+        ApiFuture<QuerySnapshot> future = dbFirestore.collection("overAllReport").get();
+        // future.get() blocks on response
+        List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+
+        for (QueryDocumentSnapshot document : documents) {
+            System.out.println(document.getId() + " => " + document.toObject(OverAllReport.class));
+            overAllReports.add(document.toObject(OverAllReport.class));
+        }
+        return overAllReports;
+    }
+
+
 
     public Event getEventDetails(String id) throws ExecutionException, InterruptedException {
         System.out.println("In Firebase getEventDetails service");

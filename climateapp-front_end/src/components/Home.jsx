@@ -34,6 +34,20 @@ export default class Home extends Component {
                             Events Catalog
                         </Button>
                     </Link>
+
+                    <Link to="/overAllReport">
+                        <Button variant="flat" size="xxl">
+                            Overall Well-Being Report
+                        </Button>
+                    </Link>
+                    
+                    <Link to="/dataVisualization">
+                        <Button variant="flat" size="xxl">
+                            Data Visualization
+                        </Button>
+                    </Link>
+                    
+
                 </Container>
             </div >
         )

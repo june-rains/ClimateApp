@@ -1,6 +1,7 @@
 package com.duke.webapp.controller;
 
 import com.duke.webapp.Dao.Event;
+import com.duke.webapp.Dao.OverAllReport;
 import com.duke.webapp.Dao.Person;
 import com.duke.webapp.service.FirebaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +30,21 @@ public class RestDemoController {
         return fireBaseService.getEventDetails(id);
     }
 
+
+
     @PostMapping("/createEvent")
     public String postExample(@RequestBody Event event) throws ExecutionException, InterruptedException {
         return fireBaseService.saveEventDetails(event);
+    }
+
+    @PostMapping("/creatOverAllReport")
+    public void postOverAllReport(@RequestBody OverAllReport report) throws ExecutionException, InterruptedException {
+        fireBaseService.saveOverAllReport(report);
+    }
+
+    @GetMapping("/getAllOverAllReports")
+    public List<OverAllReport> getOverAllReports() throws ExecutionException, InterruptedException {
+        return fireBaseService.getAllReports();
     }
 
     @PutMapping("/updateEvent")
