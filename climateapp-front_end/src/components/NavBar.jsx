@@ -15,6 +15,10 @@ export default class NavBar extends Component {
                         <Nav>
                             <Nav.Link href='/'>Home</Nav.Link>
                         </Nav>
+
+                        <Nav>
+                            <Nav.Link href='http://vcm-29657.vm.duke.edu:8090/Shibboleth.sso/Logout?return=https://shib.oit.duke.edu/cgi-bin/logout.pl'>Logout</Nav.Link>
+                        </Nav>
                     </Navbar.Collapse>
                 </Navbar>
             </div>

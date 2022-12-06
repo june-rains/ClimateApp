@@ -59,8 +59,8 @@ class SimpleAreaChart extends Component {
         return (
             <div>
                 <AreaChart
-                    width={500}
-                    height={400}
+                    width={250}
+                    height={200}
                     data={moods}
                     margin={{
                         top: 10,

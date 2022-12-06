@@ -66,8 +66,8 @@ class SimpleBarChart extends Component {
 
         return (
             <BarChart
-                width={500}
-                height={430}
+                width={250}
+                height={215}
                 data={moods}
                 margin={{
                     top: 5,

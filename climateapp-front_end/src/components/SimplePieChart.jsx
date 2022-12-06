@@ -59,14 +59,14 @@ class SimplePieChart extends Component {
 
 
         return (
-            <PieChart width={1000} height={400}>
+            <PieChart width={200} height={200}>
                 <Pie
                     dataKey="amount"
                     isAnimationActive={false}
                     data={moods}
-                    cx={200}
-                    cy={200}
-                    outerRadius={110}
+                    cx={100}
+                    cy={100}
+                    outerRadius={60}
                     fill="#8884d8"
                     label
                 >
