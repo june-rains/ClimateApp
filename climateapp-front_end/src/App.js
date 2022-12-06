@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import EventDetail from './components/EventDetail'
 import OverAllReport from './components/OverAllReport';
 import OverAllVisualization from './components/OverAllVisualization';
+import Continue from './components/Continue'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/eventsCatalog/:id' element={<EventDetail />} />
         <Route path='/overAllReport' element={<OverAllReport />} />
         <Route path='/dataVisualization' element={<OverAllVisualization />} />
+        <Route path='/continue' element={<Continue/>}/>
       </Routes>
     </BrowserRouter>
   );

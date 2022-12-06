@@ -14,9 +14,15 @@ class SurveyForm extends Component {
         super(props);
         this.state = {
             name: '',
-            netId: '',
             department: '',
-            wellBeing: ''
+            wellBeing: '',
+            knowing: '',
+            connection: '',
+            welcome: '',
+            respectStu: '',
+            respectStaff: '',
+            matter: '',
+            happyChoice: '',
 
         };
 
@@ -24,12 +30,19 @@ class SurveyForm extends Component {
         this.changeNetIDHandler = this.changeNetIDHandler.bind(this);
         this.changeDepartMentHandler = this.changeDepartMentHandler.bind(this);
         this.changeWellBeingHandler = this.changeWellBeingHandler.bind(this);
+        this.changeKnowingHandler = this.changeKnowingHandler.bind(this);
+        this.changeConnectionHandler = this.changeConnectionHandler.bind(this);
+        this.changeWelcomeHandler = this.changeWelcomeHandler.bind(this);
+        this.changeRespectStuHandler = this.changeRespectStuHandler.bind(this);
+        this.changeRespectStaffHandler = this.changeRespectStaffHandler.bind(this);
+        this.changeMatterHandler = this.changeMatterHandler.bind(this);
+        this.changeHappyChoiceHandler = this.changeHappyChoiceHandler.bind(this);
         this.saveOverAllReport = this.saveOverAllReport.bind(this);
     }
 
     saveOverAllReport = (event) => {
         event.preventDefault();
-        let report = { name: this.state.name, netId: this.state.netId, department: this.state.department, wellBeing: this.state.wellBeing }
+        let report = { name: this.props.Name, netId: this.props.NetID, department: this.state.department, wellBeing: this.state.wellBeing, knowing: this.state.knowing, connection: this.state.connection, welcome: this.state.welcome, respectStu: this.state.respectStu, respectStaff: this.state.respectStaff, matter: this.state.matter, happyChoice: this.state.happyChoice }
         console.log('report => ' + JSON.stringify(report));
 
         EventServices.createOverAllReport(report).then(res => {
@@ -53,6 +66,38 @@ class SurveyForm extends Component {
         this.setState({ wellBeing: event.target.value });
     }
 
+    changeKnowingHandler = (event) => {
+        this.setState({ knowing: event.target.value });
+    }
+
+    changeConnectionHandler = (event) => {
+        this.setState({ connection: event.target.value });
+    }
+
+    changeWelcomeHandler = (event) => {
+        this.setState({ welcome: event.target.value });
+    }
+
+    changeRespectStuHandler = (event) => {
+        this.setState({ respectStu: event.target.value });
+    }
+
+    changeRespectStaffHandler = (event) => {
+        this.setState({ respectStaff: event.target.value });
+    }
+
+    changeMatterHandler = (event) => {
+        this.setState({ matter: event.target.value });
+    }
+
+    changeHappyChoiceHandler = (event) => {
+        this.setState({ happyChoice: event.target.value });
+    }
+
+    changeHandler = (event) => {
+        this.setState({ wellBeing: event.target.value });
+    }
+
     render() {
         return (
             <>
@@ -67,17 +112,15 @@ class SurveyForm extends Component {
                     <br />
 
                     <Form.Group>
-                        <Form.Label className="font-link" style={{ fontWeight: 'bold', fontStyle: 'italic' }}>What's your netID?</Form.Label>
-                        <Form.Text className="text-muted">
-                            We'll never share your netID with anyone else.
-                        </Form.Text>
-                        <Form.Control as="textarea" rows={1} placeholder="Eg: cl580" value={this.state.netId} onChange={this.changeNetIDHandler} />
-                    </Form.Group>
-                    <br />
-
-                    <Form.Group>
                         <Form.Label className="font-link" style={{ fontWeight: 'bold', fontStyle: 'italic' }}>Which departement are you from?</Form.Label>
-                        <Form.Control as="textarea" rows={1} placeholder="Eg: Electrical Computer Engineering" value={this.state.department} onChange={this.changeDepartMentHandler} />
+                        <Form.Select value={this.state.department} onChange={this.changeDepartMentHandler}>
+                            <option>Select Your Choice</option>
+                            <option value={"ECE"}>ECE</option>
+                            <option value={"CS"}>CS</option>
+                            <option value={"Civil Engineering"}>Civil Engineering</option>
+                            <option value={"Bio Chemistry"}>Bio Chemistry</option>
+                            <option value={"BME"}>BME</option>
+                        </Form.Select>
                     </Form.Group>
                     <br />
 
@@ -91,6 +134,110 @@ class SurveyForm extends Component {
                         </Form.Select>
                     </FormGroup>
                     <br />
+
+                    <FormGroup>
+                        <Form.Label className="font-link" style={{ fontWeight: 'bold', fontStyle: 'italic' }}>How well do people understand you at Pratt?(0:least-5:most)</Form.Label>
+                        <Form.Select value={this.state.knowing} onChange={this.changeKnowingHandler}>
+                            <option>Select Your Choice</option>
+                            <option value={"0"}>0</option>
+                            <option value={"1"}>1</option>
+                            <option value={"2"}>2</option>
+                            <option value={"3"}>3</option>
+                            <option value={"4"}>4</option>
+                            <option value={"5"}>5</option>
+                        </Form.Select>
+                    </FormGroup>
+                    <br />
+
+
+                    <FormGroup>
+                        <Form.Label className="font-link" style={{ fontWeight: 'bold', fontStyle: 'italic' }}>How connected to you feel to the staff at Pratt?(0:least-5:most)</Form.Label>
+                        <Form.Select value={this.state.connection} onChange={this.changeConnectionHandler}>
+                            <option>Select Your Choice</option>
+                            <option value={"0"}>0</option>
+                            <option value={"1"}>1</option>
+                            <option value={"2"}>2</option>
+                            <option value={"3"}>3</option>
+                            <option value={"4"}>4</option>
+                            <option value={"5"}>5</option>
+                        </Form.Select>
+                    </FormGroup>
+                    <br />
+
+                    <FormGroup>
+                        <Form.Label className="font-link" style={{ fontWeight: 'bold', fontStyle: 'italic' }}>How welcoming have you found Pratt to be?(0:least-5:most)</Form.Label>
+                        <Form.Select value={this.state.welcome} onChange={this.changeWelcomeHandler}>
+                            <option>Select Your Choice</option>
+                            <option value={"0"}>0</option>
+                            <option value={"1"}>1</option>
+                            <option value={"2"}>2</option>
+                            <option value={"3"}>3</option>
+                            <option value={"4"}>4</option>
+                            <option value={"5"}>5</option>
+                        </Form.Select>
+                    </FormGroup>
+                    <br />
+
+
+                    <FormGroup>
+                        <Form.Label className="font-link" style={{ fontWeight: 'bold', fontStyle: 'italic' }}>How much respect do other students at Pratt show towards you?(0:least-5:most)</Form.Label>
+                        <Form.Select value={this.state.respectStu} onChange={this.changeRespectStuHandler}>
+                            <option>Select Your Choice</option>
+                            <option value={"0"}>0</option>
+                            <option value={"1"}>1</option>
+                            <option value={"2"}>2</option>
+                            <option value={"3"}>3</option>
+                            <option value={"4"}>4</option>
+                            <option value={"5"}>5</option>
+                        </Form.Select>
+                    </FormGroup>
+                    <br />
+
+
+                    <FormGroup>
+                        <Form.Label className="font-link" style={{ fontWeight: 'bold', fontStyle: 'italic' }}>How much respect do members of staff at Pratt show toward you?(0:least-5:most)</Form.Label>
+                        <Form.Select value={this.state.respectStaff} onChange={this.changeRespectStaffHandler}>
+                            <option>Select Your Choice</option>
+                            <option value={"0"}>0</option>
+                            <option value={"1"}>1</option>
+                            <option value={"2"}>2</option>
+                            <option value={"3"}>3</option>
+                            <option value={"4"}>4</option>
+                            <option value={"5"}>5</option>
+                        </Form.Select>
+                    </FormGroup>
+                    <br />
+
+                    <FormGroup>
+                        <Form.Label className="font-link" style={{ fontWeight: 'bold', fontStyle: 'italic' }}>How much do you matter to others at Pratt?(0:least-5:most)</Form.Label>
+                        <Form.Select value={this.state.matter} onChange={this.changeMatterHandler}>
+                            <option>Select Your Choice</option>
+                            <option value={"0"}>0</option>
+                            <option value={"1"}>1</option>
+                            <option value={"2"}>2</option>
+                            <option value={"3"}>3</option>
+                            <option value={"4"}>4</option>
+                            <option value={"5"}>5</option>
+                        </Form.Select>
+                    </FormGroup>
+                    <br />
+
+                    <FormGroup>
+                        <Form.Label className="font-link" style={{ fontWeight: 'bold', fontStyle: 'italic' }}>How happy are you with your choice to be a student at Pratt?(0:least-5:most)</Form.Label>
+                        <Form.Select value={this.state.happyChoice} onChange={this.changeHappyChoiceHandler}>
+                            <option>Select Your Choice</option>
+                            <option value={"0"}>0</option>
+                            <option value={"1"}>1</option>
+                            <option value={"2"}>2</option>
+                            <option value={"3"}>3</option>
+                            <option value={"4"}>4</option>
+                            <option value={"5"}>5</option>
+                        </Form.Select>
+                    </FormGroup>
+                    <br />
+
+
+
 
                     <Row className="justify-content-md-center">
                         <Col md='auto'>

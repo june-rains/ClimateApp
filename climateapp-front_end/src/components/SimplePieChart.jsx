@@ -5,19 +5,6 @@ import EventServices from '../services/EventServices';
 
 const COLORS = ["#00C49F", "#0088FE", "#FFBB28"];
 
-// const CustomTooltip = ({ active, payload, label }) => {
-//     if (active && payload && payload.length) {
-//       return (
-//         <div className="custom-tooltip">
-//           <p className="label">{`${label} : ${payload[0].value}`}</p>
-//           <p className="intro">{getIntroOfPage(label)}</p>
-//         </div>
-//       );
-//     }
-//     return null;
-//   };
-
-
 class SimplePieChart extends Component {
     constructor(props) {
         super(props)

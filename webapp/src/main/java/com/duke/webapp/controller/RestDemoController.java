@@ -6,20 +6,28 @@ import com.duke.webapp.Dao.Person;
 import com.duke.webapp.service.FirebaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://vcm-29657.vm.duke.edu:8090")
 public class RestDemoController {
     @Autowired
     FirebaseService fireBaseService;
 
 
+
     @GetMapping("/getAllEvents")
     public List<Event> getAll() throws Exception {
+
         return fireBaseService.getAllEvents();
     }
 
@@ -38,7 +46,30 @@ public class RestDemoController {
     }
 
     @PostMapping("/creatOverAllReport")
-    public void postOverAllReport(@RequestBody OverAllReport report) throws ExecutionException, InterruptedException {
+    @ResponseBody
+    public void postOverAllReport(@RequestBody OverAllReport report, HttpServletRequest request, HttpServletResponse response) throws ExecutionException, InterruptedException {
+//        System.out.println("***********************");
+//        System.out.printf((String) request.getAttribute("Shib-Identity-Provider"));
+
+        try{
+//            RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
+//            if (requestAttributes instanceof ServletRequestAttributes) {
+//                HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
+//                System.out.printf((String) request.getAttribute("Shib-Identity-Provider"));
+//            }
+
+
+            System.out.println(request.getAttribute("AJP_eppn"));
+//            while(params.hasMoreElements()){
+//                String paramName = params.nextElement();
+//                System.out.println("Parameter Name - "+paramName+", Value - "+request.getParameter(paramName));
+//            }
+            //System.out.println(request.getHeaderNames());
+            //System.out.printf((String) request.getAttribute("Shib-Identity-Provider"));
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+
         fireBaseService.saveOverAllReport(report);
     }
 
