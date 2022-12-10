@@ -38,7 +38,7 @@ struct ManageEventsView: View {
         Button {
             showWebView3.toggle()
         } label: {
-            UserHomePageButton(image: Image("feedback"), text: "Create feedback for approved events")
+            UserHomePageButton(image: Image("feedback"), text: "My Event FeedBack")
                 .offset(y: -50)
         }
         .sheet(isPresented: $showWebView3) {

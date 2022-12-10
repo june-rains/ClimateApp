@@ -99,7 +99,7 @@ class ViewModel: ObservableObject {
         let eventsref = db.collection("events")
 
         // Create a query against the collection.
-        let query = eventsref.whereField("submitted_by", arrayContains: "cl580")
+        let query = eventsref.whereField("submitted_by", arrayContains: NetID)
         
         query
             .getDocuments() { snapshot, error in
@@ -149,12 +149,10 @@ class ViewModel: ObservableObject {
         
         // Create a reference to the cities collection
         let eventsref = db.collection("events")
-
+        let str = "usersRecord." + String("cl580")
         // Create a query against the collection.
-        let query = eventsref.whereField("usersRecord.cl580",  isEqualTo: "joined")
-        
-        query
-            .getDocuments() { snapshot, error in
+        let query = eventsref.whereField(str,  isEqualTo: "joined")
+        query.getDocuments() { snapshot, error in
                 //check for errors
                 if error == nil {
                     // No errors
@@ -242,17 +240,17 @@ class ViewModel: ObservableObject {
     
     
     func join(_id: String) {
-        self.userRecord["cl580"] = "joined"
+        self.userRecord[NetID] = "joined"
         updateUserRecord(_id: _id)
     }
 
     func check_in(_id: String) {
-        self.userRecord["cl580"] = "checked_in"
+        self.userRecord[NetID] = "checked_in"
         updateUserRecord(_id: _id)
     }
     
     func cancel(_id: String) {
-        self.userRecord.removeValue(forKey: "cl580")
+        self.userRecord.removeValue(forKey: NetID)
         updateUserRecord(_id: _id)
     }
     
@@ -315,27 +313,27 @@ class ViewModel: ObservableObject {
                         self.event.summary = document.get("summary") as? String ?? ""
                     }
                     if !(document.get("start_timestamp") is NSNull) {
-                        self.event.start_timestamp = document.get("start_timestamp") as!String ?? ""
+                        self.event.start_timestamp = document.get("start_timestamp") as? String ?? ""
                     }
                     if !(document.get("end_timestamp") is NSNull) {
-                        self.event.end_timestamp = document.get("end_timestamp") as! String ?? ""
+                        self.event.end_timestamp = document.get("end_timestamp") as?  String ?? ""
                     }
                     if !(document.get("location") is NSNull) {
-                        self.event.location = document.get("location") as! Dictionary<String, String> ?? [:]
+                        self.event.location = document.get("location") as?  Dictionary<String, String> ?? [:]
                     }
                     if !(document.get("description") is NSNull){
-                        self.event.description = document.get("description") as! String ?? ""
+                        self.event.description = document.get("description") as? String ?? ""
                     }
                     if !(document.get("feedBack") is NSNull) {
                         print(document.get("feedBack"))
-                        self.event.feedBack = document.get("feedBack") as! [String] ?? []
+                        self.event.feedBack = document.get("feedBack") as? [String] ?? []
                     }
                     if !(document.get("feedBackAns") is NSNull){
-                        self.event.feedBackAns = document.get("feedBackAns") as! Dictionary<String, [String]> ?? Dictionary()
-                        self.ansDict = document.get("feedBackAns") as! Dictionary<String, [String]>
-                        if self.event.feedBackAns?["cl580"] == nil {
-                            self.event.feedBackAns?["cl580"] = [String](repeating: "", count: self.event.feedBack?.count ?? 0)
-                            self.ansDict["cl580"] = [String](repeating: "", count: self.event.feedBack?.count ?? 0)
+                        self.event.feedBackAns = document.get("feedBackAns") as?  Dictionary<String, [String]> ?? Dictionary()
+                        self.ansDict = (document.get("feedBackAns") as? Dictionary<String, [String]> ?? [:])!
+                        if self.event.feedBackAns?[NetID] == nil {
+                            self.event.feedBackAns?[NetID] = [String](repeating: "", count: self.event.feedBack?.count ?? 0)
+                            self.ansDict[NetID] = [String](repeating: "", count: self.event.feedBack?.count ?? 0)
                         }
                     }
                     

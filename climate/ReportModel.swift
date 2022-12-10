@@ -40,8 +40,8 @@ class ReportModel: ObservableObject {
                         
                     } else {
                         self.ansDict = document.get("ansList") as! Dictionary<String, [String]> ?? [:]
-                        if self.ansDict["cl580"] == nil {
-                            self.ansDict["cl580"] = [String](repeating: "", count: self.questionList.count ?? 0)
+                        if self.ansDict[NetID] == nil {
+                            self.ansDict[NetID] = [String](repeating: "", count: self.questionList.count ?? 0)
                     }
                     }
                    

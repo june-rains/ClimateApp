@@ -15,8 +15,10 @@ struct UserHomeView: View {
     @State private var showWebView5 = false
     
     
+    
     @ObservedObject var model = ViewModel()
     
+   
     var body: some View {
         VStack(spacing: 23.62) {
                   
@@ -26,23 +28,23 @@ struct UserHomeView: View {
                             .resizable(capInsets: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)).aspectRatio(contentMode: .fit)
                             .frame(width: 250, height: 250)
                             .offset(x: -30)
-                        
+
                         Text("Event Helper")
                         .fontWeight(.bold)
                         .font(.title)
                         .frame(width: 182, height: 34, alignment: .topLeading)
                         .offset(x: -90, y: 5)
-                        
+
                     }
                     .padding()
                     
                     
                     
                     HStack{
-                        
+                       
                         Spacer()
                         
-                        Text("Changhao Li")
+                        Text(Name)
                             .font(.subheadline)
                             .frame(width: 125, height: 21,  alignment: .topLeading)
                             .offset(x: 20)
@@ -53,8 +55,6 @@ struct UserHomeView: View {
                     .offset(y: -130)
 
             
-            
-                
                     Button {
                         showWebView1.toggle()
                     } label: {
@@ -71,7 +71,7 @@ struct UserHomeView: View {
                     }
                     Link(destination: URL(string: "https://admin.calendar.duke.edu/eventsubmit/")!, label: {
                         UserHomePageButton(image: Image("addButton"), text: "Create Event")
-                            .offset(y: -50)
+                            .offset(y: -73)
             })
                     
             
@@ -81,7 +81,7 @@ struct UserHomeView: View {
                         showWebView3.toggle()
                     } label: {
                         UserHomePageButton(image: Image("cameraButton"), text: "Scan QR Code to Check In ")
-                            .offset(y: -50)
+                            .offset(y: -73)
                     }
                     .sheet(isPresented: $showWebView3) {
                         ScanView()
@@ -92,7 +92,7 @@ struct UserHomeView: View {
                     showWebView4.toggle()
                 } label: {
                     UserHomePageButton(image: Image("humanButton"), text: "Manage My Events")
-                        .offset(y: -50)
+                        .offset(y: -73)
                 }
                 .sheet(isPresented: $showWebView4) {
                     ManageEventsView()
@@ -103,11 +103,20 @@ struct UserHomeView: View {
                         showWebView5.toggle()
                     } label: {
                         UserHomePageButton(image: Image("reportButton"), text: "Report Overall Well-Being")
-                            .offset(y: -50)
+                            .offset(y: -73)
                     }
                     .sheet(isPresented: $showWebView5) {
                         reportView()
                     }
+            
+            Button {
+                showWebView2.toggle()
+            } label: {
+            }
+            Link(destination: URL(string: "http://vcm-29657.vm.duke.edu:8090/dataVisualization")!, label: {
+                UserHomePageButton(image: Image("visualizationButton"), text: "Data Visualization")
+                    .offset(y: -93)
+    })
                   
 
                     
@@ -115,8 +124,8 @@ struct UserHomeView: View {
                 .frame(width: 375, height: 812)
                 .background(Color.white)
                 .offset(y: -70)
-            }
-        
+                .navigationBarBackButtonHidden(true)
+    }
 }
 
 struct UserHomeView_Previews: PreviewProvider {

@@ -64,8 +64,8 @@ struct ScanDetailView: View {
                     .font(.title2)
                 
                 
-                    if model.userRecord["cl580"] != nil {
-                        if model.userRecord["cl580"] == "joined" {
+                    if model.userRecord[NetID] != nil {
+                        if model.userRecord[NetID] == "joined" {
                             let image = model.generateQRCode(from: model.event.id)
                             HStack{
                                 Image(uiImage: image).resizable()
@@ -83,7 +83,7 @@ struct ScanDetailView: View {
                 
                 
                 
-                if model.userRecord["cl580"] == nil {
+                if model.userRecord[NetID] == nil {
                     Button(action: {model.join(_id: model.event.id )}) {
                         Text("Join")
                             .frame(width: 295, height: 52, alignment: .center)
@@ -97,7 +97,7 @@ struct ScanDetailView: View {
                         .foregroundColor(.white)
                         .offset(x:25, y:20)
                         } else {
-                            if model.userRecord["cl580"] == "joined" {
+                            if model.userRecord[NetID] == "joined" {
                                 Button(action: {}) {
                                     Text("Joined")
                                         .frame(width: 295, height: 52, alignment: .center)
@@ -134,7 +134,7 @@ struct ScanDetailView: View {
                                     .cornerRadius(16)
                                     .foregroundColor(.white)
                                     .offset(x:25, y:20)
-                            } else if model.userRecord["cl580"] == "checked_in" {
+                            } else if model.userRecord[NetID] == "checked_in" {
                                 Button(action: {}) {
                                     Text("FeedBack")
                                         .frame(width: 295, height: 52, alignment: .center)

@@ -80,8 +80,8 @@ struct FeedBackDetailView: View {
                     .font(.title2)
                 
                 
-                    if model.userRecord["cl580"] != nil {
-                        if model.userRecord["cl580"] == "joined" {
+                    if model.userRecord[NetID] != nil {
+                        if model.userRecord[NetID] == "joined" {
                             let image = model.generateQRCode(from: id)
                             HStack{
                                 Image(uiImage: image ?? UIImage()).resizable()

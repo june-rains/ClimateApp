@@ -26,7 +26,7 @@ struct climateApp: App {
     
     var body: some Scene {
         WindowGroup {
-            UserHomeView()
+            ContentView()
         }
     }
 }

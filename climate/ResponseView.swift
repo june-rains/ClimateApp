@@ -31,7 +31,7 @@ struct ResponseView: View {
                 
                 Divider()
                 VStack(spacing:5){
-                    TextField("Answer", text: self.model.binding(for: "cl580")[index])
+                    TextField("Answer", text: self.model.binding(for: NetID)[index])
                 }
             }
                

@@ -83,8 +83,8 @@ struct EventDetailView: View {
                     .font(.title2)
                 
                 
-                    if model.userRecord["cl580"] != nil {
-                        if model.userRecord["cl580"] == "joined" {
+                    if model.userRecord[NetID] != nil {
+                        if model.userRecord[NetID] == "joined" {
                             let image = model.generateQRCode(from: id)
                             HStack{
                                 Image(uiImage: image ?? UIImage()).resizable()
@@ -102,7 +102,7 @@ struct EventDetailView: View {
                 
                 
                 
-                if model.userRecord["cl580"] == nil {
+                if model.userRecord[NetID] == nil {
                     Button(action: {model.join(_id: id)}) {
                         Text("Join")
                             .frame(width: 295, height: 52, alignment: .center)
@@ -116,7 +116,7 @@ struct EventDetailView: View {
                         .foregroundColor(.white)
                         .offset(x:25, y:20)
                         } else {
-                            if model.userRecord["cl580"] == "joined" {
+                            if model.userRecord[NetID] == "joined" {
                                 Button(action: {}) {
                                     Text("Joined")
                                         .frame(width: 295, height: 52, alignment: .center)
@@ -130,7 +130,7 @@ struct EventDetailView: View {
                                     .foregroundColor(.white)
                                     .offset(x:25, y:20)
                                 Button(action: {model.cancel(_id: id)}) {
-                                    Text("Cancel")
+                                    Text("Do not attend")
                                         .frame(width: 295, height: 52, alignment: .center)
                                     
                                 }.padding(.vertical, 5)
@@ -153,7 +153,7 @@ struct EventDetailView: View {
                                     .cornerRadius(16)
                                     .foregroundColor(.white)
                                     .offset(x:25, y:20)
-                            } else if model.userRecord["cl580"] == "checked_in" {
+                            } else if model.userRecord[NetID] == "checked_in" {
                                 Button(action: {self.isResponseView.toggle()}) {
                                     Text("FeedBack")
                                         .frame(width: 295, height: 52, alignment: .center)

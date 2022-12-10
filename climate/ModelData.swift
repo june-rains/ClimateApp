@@ -1,10 +1,3 @@
-//
-//  ModelData.swift
-//  climate
-//
-//  Created by mac on 2022/6/16.
-//
-
 import Foundation
 import Firebase
 

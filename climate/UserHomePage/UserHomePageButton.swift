@@ -16,8 +16,12 @@ struct UserHomePageButton: View {
             image
                 .resizable()
                 .frame(width: 40, height: 40)
+                .offset(x:70, y:0)
+                
                     
             Text(text)
+                .frame(width: 250, height: 40, alignment: .topLeading)
+                .offset(x: 80, y: 10)
             
         }
         .padding(.vertical, 20)
