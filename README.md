@@ -19,5 +19,9 @@ please check this url to help you install them correctly: https://linuxize.com/p
 
 
 
-https://user-images.githubusercontent.com/71317967/216500557-18ad9429-f088-4901-b27e-b99a84e8775a.mp4
+
+
+
+
+https://user-images.githubusercontent.com/71317967/216501016-8f2ef88c-065e-4054-ba7e-ac8d710706d3.mp4
 
