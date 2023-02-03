@@ -14,3 +14,6 @@ please check this url to help you install them correctly: https://linuxize.com/p
     Please follow this step to help you deploy your front end to apache server: https://codeburst.io/deploying-and-hosting-a-react-app-on-an-apache-server-b7121dffb07a
 4. Then you can run your front-end app, enter into directory `./climateapp-front-end` to run use command: `sudo systemctl restart apache2`
 5. Then you need to run your back-end app, to run this, you need to install ItelliJ IDEA, and enter `./webapp` directory to run 
+
+# Demo Video
+[![Alt text](https://img.youtube.com/vi/4aFEz_v3Qdk/0.jpg)](https://www.youtube.com/watch?v=4aFEz_v3Qdk)
