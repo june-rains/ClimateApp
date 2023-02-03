@@ -16,4 +16,8 @@ please check this url to help you install them correctly: https://linuxize.com/p
 5. Then you need to run your back-end app, to run this, you need to install ItelliJ IDEA, and enter `./webapp` directory to run 
 
 # Demo Video
-[![Alt text](https://img.youtube.com/vi/4aFEz_v3Qdk/0.jpg)](https://www.youtube.com/watch?v=4aFEz_v3Qdk)
+
+
+
+https://user-images.githubusercontent.com/71317967/216500557-18ad9429-f088-4901-b27e-b99a84e8775a.mp4
+
